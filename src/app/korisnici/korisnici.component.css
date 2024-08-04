@@ -1,0 +1,61 @@
+header {
+  background-color: rgb(10, 25, 238);
+}
+
+.actions dx-button {
+  margin-left: 0.5em;
+}
+
+::ng-deep #employeeInfo .employeePhoto {
+  height: 100px;
+  float: left;
+  padding: 20px;
+}
+
+::ng-deep #employeeInfo .employeeNotes {
+  padding-top: 20px;
+  text-align: justify;
+}
+
+::ng-deep .dark #employeeInfo .employeeNotes {
+  color: rgb(181, 181, 181);
+}
+
+.rect {
+  font-size: 15px;
+  padding-top: 10px;
+  height: 100%;
+  font-weight: bold;
+}
+
+.demo-light {
+  background: rgba(207, 195, 253, 0.5);
+}
+
+.demo-dark {
+  background: rgba(207, 195, 253, 0.5);
+}
+
+.demo-dark.header {
+  background: rgba(207, 195, 253, 0.5);
+}
+
+.demo-dark.footer {
+  background: rgba(207, 195, 253, 0.5);
+}
+
+.small {
+  height: 50px;
+  border: 1px solid lightgray;
+}
+
+::ng .dx-datagrid-borders > .dx-datagrid-filter-panel,
+.dx-datagrid-borders > .dx-datagrid-headers {
+  border-top: 1px solid #ddd;
+  background-color: aliceblue;
+}
+
+::ng-deep #grid .dx-datagrid-headers {
+  border-top: 1px solid #ddd;
+  font-weight: bold;
+}

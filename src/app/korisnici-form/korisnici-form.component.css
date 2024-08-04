@@ -1,0 +1,29 @@
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.dx-field-item-content {
+  width: 100% !important; /* Adjust width as needed */
+}
+
+.dx-textbox {
+  width: 100% !important; /* Ensure the width is applied to textboxes */
+}
+
+.dx-textarea {
+  width: 100% !important; /* Ensure the width is applied to textareas */
+}
+
+.dx-selectbox {
+  width: 100% !important; /* Ensure the width is applied to selectboxes */
+}
+
+.vl {
+  border-left: 1px solid grey;
+  height: 500px;
+}
+
+.close-btn {
+  width: auto;
+}

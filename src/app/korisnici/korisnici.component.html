@@ -1,0 +1,66 @@
+<div
+  style="background-color: aliceblue"
+  class="row w-auto align-items-center mb-2 mt-2"
+>
+  <div class="col-8"><strong>KORISNICI</strong></div>
+  <div class="actions col-4 d-flex flex-row-reverse align-items-center">
+    <dx-button
+      [routerLink]="['/novi']"
+      style="border-radius: 25px"
+      icon="add"
+      type="success"
+      hint="Dodaj"
+    ></dx-button>
+    <dx-button
+      (onClick)="onSearchClick()"
+      icon="find"
+      type="normal"
+    ></dx-button>
+    <dx-button
+      [disabled]="buttonDisabled"
+      icon="trash"
+      type="normal"
+      (onClick)="izbrisiKorisnika()"
+    ></dx-button>
+    <dx-button
+      [disabled]="buttonDisabled"
+      icon="edit"
+      type="normal"
+      (onClick)="onButtonClick()"
+      [routerLink]="['/edit', odabraniKorsinik?.id]"
+    ></dx-button>
+  </div>
+</div>
+
+<dx-data-grid
+  #grid
+  keyExpr="id"
+  [dataSource]="korisnici"
+  id="dataGrid"
+  [hoverStateEnabled]="true"
+  [showBorders]="true"
+  [selectedRowKeys]="[]"
+  width="100%"
+  [rowAlternationEnabled]="true"
+  [showColumnLines]="true"
+  [showRowLines]="true"
+  [showBorders]="true"
+  (onSelectionChanged)="onSelectionChanged($event)"
+>
+  <dxo-group-panel [visible]="true"></dxo-group-panel>
+  <dxo-search-panel
+    [visible]="showSearch"
+    [width]="240"
+    placeholder="Search..."
+  ></dxo-search-panel>
+  <dxo-selection mode="multiple"></dxo-selection>
+  <dxi-column dataField="ime" [width]="180"></dxi-column>
+  <dxi-column dataField="prezime" [width]="180"></dxi-column>
+  <dxi-column dataField="email" [width]="180"></dxi-column>
+  <dxi-column dataField="telefon" [width]="180"></dxi-column>
+  <dxi-column dataField="role" [width]="250"></dxi-column>
+  <dxi-column dataField="radnoMjesto" [width]="180"></dxi-column>
+  <dxi-column dataField="drzava" [width]="180"></dxi-column>
+  <dxi-column dataField="grad" [width]="180"></dxi-column>
+  <dxi-column dataField="" [width]="180"></dxi-column>
+</dx-data-grid>

@@ -1,0 +1,158 @@
+<app-korisnici></app-korisnici>
+<hr />
+<div
+  class="container-xl text-center d-flex flex-column justify-content-around mt-5 border rounded shadow"
+>
+  <div class="d-flex w-100 justify-content-between">
+    <h5 class="col-8 text-start mt-2">DODAJ KORSINIKA</h5>
+    <div class=>
+      <dx-button
+        class="justify-content-between d-flex round"
+        style="border-radius: 25px"
+        icon="close"
+        type="normal"
+        stylingMode="text"
+        [routerLink]="['/']"
+      ></dx-button>
+    </div>
+  </div>
+  <div style="height: 45dvh">
+    <form
+      [formGroup]="korisniciForm"
+      class="d-flex justify-content-around"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="h-100 w-100 d-flex flex-column px-2" style="width: 120px">
+        <label class="text-start mt-3"
+          >Ime<span style="color: red">*</span></label
+        >
+        <input type="text" formControlName="ime" />
+        <small
+          class="text-danger"
+          *ngIf="
+            korisniciForm.get('ime')?.invalid &&
+            korisniciForm.get('ime')?.touched
+          "
+          >Potrebno je prezime </small
+        ><label class="text-start mt-3"
+          >Prezime<span style="color: red">*</span></label
+        >
+        <input type="text" formControlName="prezime" />
+        <small
+          class="text-danger"
+          *ngIf="
+            korisniciForm.get('prezime')?.invalid &&
+            korisniciForm.get('prezime')?.touched
+          "
+          >Potrebno je prezime
+        </small>
+        <label class="text-start mt-3"
+          >Spol<span style="color: red">*</span></label
+        >
+        <select formControlName="spol">
+          <option>Muško</option>
+          <option>Žensko</option>
+          <option>Drugo</option>
+        </select>
+        <label class="text-start mt-3"
+          >Radno Mjesto<span style="color: red">*</span></label
+        >
+        <select formControlName="radnoMjesto">
+          <option>IT Menadžer</option>
+          <option>Financijski analitičar</option>
+          <option>Tehnička podrška</option>
+        </select>
+        <label class="text-start mt-3">Bilješke</label>
+        <input type="textArea" formControlName="biljeske" />
+      </div>
+      <div class="vl h-100 w-100 d-flex flex-column px-2" style="width: 120px">
+        <label class="text-start mt-3"
+          >Email<span style="color: red">*</span></label
+        >
+        <input type="text" formControlName="email" />
+        <small
+          class="text-danger"
+          *ngIf="
+            korisniciForm.get('email')?.invalid &&
+            korisniciForm.get('email')?.touched
+          "
+          >Potreban je email </small
+        ><label class="text-start mt-3" placeholder="+385123456789"
+          >Telefon</label
+        >
+        <input type="text" formControlName="telefon" />
+        <label class="text-start mt-3"
+          >Država<span style="color: red">*</span></label
+        >
+        <select formControlName="drzava">
+          <option>Hrvatska</option>
+          <option>Italija</option>
+          <option>Francuska</option>
+        </select>
+        <label class="text-start mt-3"
+          >Grad<span style="color: red">*</span></label
+        >
+        <select formControlName="grad">
+          <option>Zagreb</option>
+          <option>Split</option>
+          <option>Samobor</option>
+        </select>
+        <label class="text-start mt-3">Adresa</label>
+        <input type="textArea" formControlName="adresa" />
+      </div>
+      <div class="vl h-100 w-100 d-flex flex-column px-2" style="width: 120px">
+        <label class="text-start mt-3"
+          >Korisničko Ime<span style="color: red">*</span></label
+        >
+        <input type="text" formControlName="korisnickoIme" />
+        <small
+          class="text-danger"
+          *ngIf="
+            korisniciForm.get('korisnickoIme')?.invalid &&
+            korisniciForm.get('korisnickoIme')?.touched
+          "
+          >Potrebno je korisnicko ime </small
+        ><label class="text-start mt-3">Nova Lozinka</label>
+        <input type="text" formControlName="novaLozinka" />
+        <label class="text-start mt-3">Ponovi lozinku</label>
+        <input type="select" formControlName="ponoviLozinku" />
+        <hr />
+        <h5 class="text-start">Role<span style="color: red">*</span></h5>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="Administrator"
+            id="flexCheckDefault"
+            formControlName="administrator"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            Administrator
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="User"
+            id="flexCheckChecked"
+            checked
+            formControlName="korisnik"
+          />
+          <label class="form-check-label" for="flexCheckChecked">
+            Korisnik
+          </label>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="text-end m-3">
+    <dx-button [routerLink]="['/']" text="Otkaži" type="normal"></dx-button>
+    <dx-button
+      (onClick)="onSubmit()"
+      class="m-2"
+      text="Spremi"
+      type="success"
+    ></dx-button>
+  </div>
+</div>
